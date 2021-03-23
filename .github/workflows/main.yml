@@ -1,0 +1,26 @@
+name: GitHub Workflow
+
+on: [push]
+
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: false
+          python-version: 3.8
+      - name: install deps
+        shell: bash -l {0}
+        run: conda install numpy=1.19.1 scikit-learn=0.23.2 networkx=2.5 coverage
+      - name: run test
+        shell: bash -l {0}
+        run: python -m coverage run test.py && python -m coverage xml
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
+          flags: unittests        
