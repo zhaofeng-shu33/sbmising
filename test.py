@@ -15,10 +15,13 @@ class TestIsing(unittest.TestCase):
     def test_ising_2(self):
         G = sbm_graph(100, 2, 16, 4)
         results = SIBM(G, k=2)
-        print(results)
         labels_true = get_ground_truth(G)
         self.assertAlmostEqual(compare(results, labels_true), 1.0)        
-
+    def test_ising_3(self):
+        G = sbm_graph(120, 3, 20, 4)
+        results = SIBM(G, k=3, max_iter=80)
+        labels_true = get_ground_truth(G)
+        self.assertAlmostEqual(compare(results, labels_true), 1.0)  
 
 if __name__ == '__main__':
     unittest.main()
