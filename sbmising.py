@@ -158,7 +158,7 @@ def SIBM(graph, k=2, max_iter=40, gamma=None, beta=None):
         else:
             beta = 1.2
     if gamma is None:
-        gamma = 2 * b
+        gamma = 6 * b
 
     if k == 2:
         sibm = SIBM2(graph, beta, gamma)
