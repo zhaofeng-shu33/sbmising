@@ -3,7 +3,7 @@ This repository uses Ising model (simulated annealing) to recover labels of stoc
 
 ## Note
 The code in this repository can only recover symmetric SBM.
-Symmetric SBM means that the two communities have equal size.
+Symmetric SBM means that the communities have equal size.
 
 The SBM generator is $\textrm{SBM}(n, k, \frac{a \log n}{n}, \frac{b \log n}{n})$.
 
