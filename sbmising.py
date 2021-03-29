@@ -151,7 +151,7 @@ def SIBM(graph, k=2, max_iter=40, gamma=None, beta=None):
             a, b = _estimate_a_b(graph, k)
         except ValueError:
             a, b = k, k
-        square_term = (a + b - k)**2 - 4 * a * b
+        square_term = (a + b - k) ** 2 - 4 * a * b
         if square_term > 0:
             _beta_star = np.log((a + b - k - np.sqrt(square_term))/ (2 * b))
             beta = 1.2 * _beta_star
