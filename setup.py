@@ -1,3 +1,4 @@
+import setuptools
 from setuptools import setup
 
 with open("README.md") as fh:
@@ -5,7 +6,7 @@ with open("README.md") as fh:
     
 if __name__ == '__main__':
     setup(name = 'sbmising',
-          version = '0.1',
+          version = '0.2',
           description = 'simulated annealing for the recovery of symmetric stochastic block model',
           author = 'zhaofeng-shu33',
           author_email = '616545598@qq.com',
@@ -16,7 +17,7 @@ if __name__ == '__main__':
           long_description_content_type="text/markdown",          
           install_requires = ['numpy', 'networkx'],
           license = 'Apache License Version 2.0',
-          py_modules = ['sbmising'],
+          packages = setuptools.find_packages(),
           classifiers = (
               "Development Status :: 4 - Beta",
               "Programming Language :: Python :: 3.8",
