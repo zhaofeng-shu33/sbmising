@@ -1,5 +1,6 @@
 import setuptools
 from setuptools import setup
+from Cython.Build import cythonize
 
 with open("README.md") as fh:
     long_description = fh.read()
@@ -18,6 +19,7 @@ if __name__ == '__main__':
           install_requires = ['numpy', 'networkx'],
           license = 'Apache License Version 2.0',
           packages = setuptools.find_packages(),
+          ext_modules = cythonize('sbmising/sibm_c.pyx'),
           classifiers = (
               "Development Status :: 4 - Beta",
               "Programming Language :: Python :: 3.8",
