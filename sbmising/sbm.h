@@ -271,6 +271,13 @@ void majority_voting_k(const std::vector<std::vector<int>*>& labels_list, int k,
     delete bincount;
 }
 
+
+/// \brief run the experiment averaged multiple times
+///
+/// \param n the number of nodes
+/// \param k the community number
+/// \param _N burning time of metropolis algorithm
+///
 double task_cpp(int repeat, int n, int k, double a, double b, double alpha, double beta, int num_of_sibm_samples, int m,  int _N) {
     double total_acc = 0;
     if (k == 2 && m == 1) {
